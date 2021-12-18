@@ -99,15 +99,16 @@ def restruct_and_separate_current_data(data):
     Original data is removed
     :return: new current data
     """
-    data_list = data["dataList"]
     new_data_list = {}
-    for i in data_list:
-        del i["key"]
-        name = i["name"]
-        name = name.replace(" ", "_")
-        del i["name"]
-        new_data_list[name] = i["value"]
-    del data["dataList"]
+    if data["dataList"]
+        data_list = data["dataList"]
+        for i in data_list:
+            del i["key"]
+            name = i["name"]
+            name = name.replace(" ", "_")
+            del i["name"]
+            new_data_list[name] = i["value"]
+        del data["dataList"]
     return new_data_list
 
 def single_run(file):
