@@ -149,18 +149,23 @@ def single_run(file):
         logging.info("%s - Inverter DeviceState: %s -> Publishing MQTT...",
                      _t, inverter_device_state)
         for i in station_data:
-            if i not in discard:
-                mqtt.message(config["mqtt"], topic+"/station/" + i, station_data[i])
+            if station_data[i]:
+                if i not in discard:
+                    mqtt.message(config["mqtt"], topic+"/station/" + i, station_data[i])
 
         for i in inverter_data:
-            if i not in discard:
-                mqtt.message(config["mqtt"], topic+"/inverter/" + i, inverter_data[i])
-        mqtt.message(config["mqtt"], topic+"/inverter/attributes", json.dumps(inverter_data_list))
+            if inverter_data[i]:
+                if i not in discard:
+                    mqtt.message(config["mqtt"], topic+"/inverter/" + i, inverter_data[i])
+        if inverter_data_list:
+            mqtt.message(config["mqtt"], topic+"/inverter/attributes", json.dumps(inverter_data_list))
 
         for i in logger_data:
-            if i not in discard:
-                mqtt.message(config["mqtt"], topic+"/logger/" + i, logger_data[i])
-        mqtt.message(config["mqtt"], topic+"/logger/attributes", json.dumps(logger_data_list))
+            if logger_data[i]:
+                if i not in discard:
+                    mqtt.message(config["mqtt"], topic+"/logger/" + i, logger_data[i])
+        if logger_data_list:
+            mqtt.message(config["mqtt"], topic+"/logger/attributes", json.dumps(logger_data_list))
     else:
         mqtt.message(config["mqtt"], topic+"/inverter/deviceState", inverter_data["deviceState"])
         mqtt.message(config["mqtt"], topic+"/logger/deviceState", logger_data["deviceState"])
