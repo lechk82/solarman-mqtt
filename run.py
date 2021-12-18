@@ -100,7 +100,7 @@ def restruct_and_separate_current_data(data):
     :return: new current data
     """
     new_data_list = {}
-    if data["dataList"]
+    if data["dataList"]:
         data_list = data["dataList"]
         for i in data_list:
             del i["key"]
