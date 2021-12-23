@@ -262,6 +262,7 @@ template:
 
 ### Using Docker
 Supported platforms: linux/arm64 linux/arm/v7 linux/arm64
+
 Docker example to run this script every 5 minutes and providing a config file:
 
 ```lang=bash
