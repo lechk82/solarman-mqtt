@@ -261,7 +261,7 @@ template:
 ![Screenshot](https://github.com/lechk82/solarman-mqtt/raw/main/screenshot_haenergy.png "Screenshot")
 
 ### Using Docker
-
+Supported platforms: linux/arm64 linux/arm/v7 linux/arm64
 Docker example to run this script every 5 minutes and providing a config file:
 
 ```lang=bash
@@ -269,7 +269,7 @@ cd /opt
 git clone https://github.com/lechk82/solarman-mqtt
 cd solarman-mqtt
 mv config.sample.json config.json # setup your config
-sudo docker run --name solarman-mqtt -d --restart unless-stopped -v /opt/solarman-mqtt:/opt/app-root/src ghcr.io/lechk82/solarman-mqtt:latest
+sudo docker run --name solarman-mqtt -d --restart unless-stopped -v /opt/solarman-mqtt:/opt/app-root/src ghcr.io/lechk82/solarman-mqtt:latest uname -m
 ```
 
 ### Using docker-compose
