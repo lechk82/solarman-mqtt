@@ -1,6 +1,6 @@
 # based on https://github.com/home-assistant/docker-base
-ARG BUILD_FROM
-amd64: alpine:3.14
+ARG BUILD_FROM=alpine:3.14
+# amd64: alpine:3.14
 # i386: i386/alpine:3.14
 # aarch64: arm64v8/alpine:3.14
 # armv7: arm32v7/alpine:3.14
