@@ -261,7 +261,7 @@ template:
 ![Screenshot](https://github.com/lechk82/solarman-mqtt/raw/main/screenshot_haenergy.png "Screenshot")
 
 ### Using Docker
-Supported platforms: linux/arm64 linux/arm/v7 linux/arm64
+Supported platforms: linux/amd64, linux/arm/v7, linux/arm64
 
 Docker example to run this script every 5 minutes and providing a config file:
 
