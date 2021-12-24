@@ -270,7 +270,7 @@ cd /opt
 git clone https://github.com/lechk82/solarman-mqtt
 cd solarman-mqtt
 mv config.sample.json config.json # setup your config
-sudo docker run --name solarman-mqtt -d --restart unless-stopped -v /opt/solarman-mqtt:/opt/app-root/src ghcr.io/lechk82/solarman-mqtt:latest uname -m
+sudo docker run --name solarman-mqtt -d --restart unless-stopped -v /opt/solarman-mqtt:/opt/app-root/src ghcr.io/lechk82/solarman-mqtt:latest
 ```
 
 ### Using docker-compose
